@@ -41,7 +41,7 @@ public interface EventService {
 	 * in the future.
 	 * @return The list of all active {@code events}. 
 	 */
-	public List<Event> getActiveEvents();
+	public List<Event> getActiveEvents() throws StudyUpException;
 
 	/**
 	 * Fetches all the past events. i.e., the events with past {@code Date}.

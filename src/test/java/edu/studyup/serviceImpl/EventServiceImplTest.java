@@ -3,6 +3,7 @@ package edu.studyup.serviceImpl;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -54,6 +55,23 @@ class EventServiceImplTest {
 		event.setStudents(eventStudents);
 		
 		DataStorage.eventData.put(event.getEventID(), event);
+		
+		//Create Event2
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.YEAR, 1); // to get previous year add -1
+		Date nextYear = cal.getTime();
+		
+		Event event2 = new Event();
+		event2.setEventID(2);
+		event2.setDate(nextYear);
+		event2.setName("Event 1");
+		Location location2 = new Location(-122, 37);
+		event2.setLocation(location2);
+		List<Student> eventStudents2 = new ArrayList<>();
+		eventStudents2.add(student);
+		event2.setStudents(eventStudents2);
+		
+		DataStorage.eventData.put(event2.getEventID(), event2);
 	}
 
 	@AfterEach
@@ -66,6 +84,14 @@ class EventServiceImplTest {
 		int eventID = 1;
 		eventServiceImpl.updateEventName(eventID, "Renamed Event 1");
 		assertEquals("Renamed Event 1", DataStorage.eventData.get(eventID).getName());
+	}
+	
+	@Test
+	void testUpdateEvent_NameTooLong_badCase() {
+		int eventID = 1;
+		Assertions.assertThrows(StudyUpException.class, () -> {
+			eventServiceImpl.updateEventName(eventID, "Too longToo longToo longToo longToo longToo longToo long");
+		  });
 	}
 	
 	@Test
@@ -82,6 +108,18 @@ class EventServiceImplTest {
 			Assertions.assertThrows(StudyUpException.class, () -> { 
 				eventServiceImpl.updateEvent(event);
 			}); 
+	}
+	
+	@Test
+	void testgetActiveEvents_GoodCase() throws StudyUpException {
+		assertEquals(eventServiceImpl.getActiveEvents().size(), 1);
+	}
+	
+	@Test
+	void testgetActiveEvents_EventInFuture_BadCase() {
+		Assertions.assertThrows(StudyUpException.class, () -> {
+			eventServiceImpl.getActiveEvents();
+		  });
 	}
 	
 	@Test
