@@ -20,7 +20,7 @@ public class EventServiceImpl implements EventService {
 			throw new StudyUpException("No event found.");
 		}
 
-		if(name.length() > 20) {
+		if(name.length() >= 20) {
 			throw new StudyUpException("Length too long. Maximun is 20");
 		}
 		event.setName(name);
@@ -30,18 +30,13 @@ public class EventServiceImpl implements EventService {
 	}
 
 	@Override
-	public List<Event> getActiveEvents() throws StudyUpException {
+	public List<Event> getActiveEvents() {
 		Map<Integer, Event> eventData = DataStorage.eventData;
 		List<Event> activeEvents = new ArrayList<>();
+		
 		for (Integer key : eventData.keySet()) {
 			Event ithEvent= eventData.get(key);
-			if (!ithEvent.getDate().after(new Date())) {
-				activeEvents.add(ithEvent);
-			}
-//			if (ithEvent.getDate().after(new Date())) {
-//				throw new StudyUpException("Gets future event");
-//			}
-			
+			activeEvents.add(ithEvent);
 		}
 		return activeEvents;
 	}
@@ -71,9 +66,6 @@ public class EventServiceImpl implements EventService {
 		if(presentStudents == null) {
 			presentStudents = new ArrayList<>();
 		}
-		if(presentStudents.size() >= 2) {
-			throw new StudyUpException("Too many students already in event. Max is 2 students.");
-		}
 		presentStudents.add(student);
 		event.setStudents(presentStudents);		
 		return DataStorage.eventData.put(eventID, event);
@@ -82,11 +74,6 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public Event deleteEvent(int eventID) {		
 		return DataStorage.eventData.remove(eventID);
-	}
-
-	public void updateEvent(Event event) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
