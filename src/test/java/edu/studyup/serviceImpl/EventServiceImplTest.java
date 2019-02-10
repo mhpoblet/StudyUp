@@ -83,11 +83,7 @@ class EventServiceImplTest {
 		event3.setDate(prevYear);
 		event3.setName("Event 3");
 		Location location3 = new Location(-122, 37);
-		event3.setLocation(location3);
-//		List<Student> eventStudents3 = new ArrayList<>();
-//		eventStudents3.add(student);
-//		event3.setStudents(eventStudents3);
-		
+		event3.setLocation(location3);	
 		DataStorage.eventData.put(event3.getEventID(), event3);
 	
 	}
@@ -162,6 +158,13 @@ class EventServiceImplTest {
 		Assertions.assertThrows(StudyUpException.class, () -> {
 			eventServiceImpl.addStudentToEvent(testStudent, eventId);
 		});	
+	}
+	
+	@Test
+	void testaddStudentToEvent_FirstStudent() throws StudyUpException {
+		int eventId = 3;
+		Student testStudent = new Student();
+		assertNotNull(eventServiceImpl.addStudentToEvent(testStudent, eventId));
 	}
 	
 	@Test
