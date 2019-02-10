@@ -58,13 +58,13 @@ class EventServiceImplTest {
 		
 		//Create Event2
 		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.YEAR, 1); // to get previous year add -1
+		cal.add(Calendar.YEAR, 1); 
 		Date nextYear = cal.getTime();
 		
 		Event event2 = new Event();
 		event2.setEventID(2);
 		event2.setDate(nextYear);
-		event2.setName("Event 1");
+		event2.setName("Event 2");
 		Location location2 = new Location(-122, 37);
 		event2.setLocation(location2);
 		List<Student> eventStudents2 = new ArrayList<>();
@@ -72,6 +72,24 @@ class EventServiceImplTest {
 		event2.setStudents(eventStudents2);
 		
 		DataStorage.eventData.put(event2.getEventID(), event2);
+		
+		//Create Event3
+		Calendar calPast = Calendar.getInstance();
+		cal.add(Calendar.YEAR, -1); 
+		Date prevYear = cal.getTime();
+		
+		Event event3 = new Event();
+		event3.setEventID(3);
+		event3.setDate(prevYear);
+		event3.setName("Event 3");
+		Location location3 = new Location(-122, 37);
+		event3.setLocation(location3);
+//		List<Student> eventStudents3 = new ArrayList<>();
+//		eventStudents3.add(student);
+//		event3.setStudents(eventStudents3);
+		
+		DataStorage.eventData.put(event3.getEventID(), event3);
+	
 	}
 
 	@AfterEach
@@ -87,43 +105,69 @@ class EventServiceImplTest {
 	}
 	
 	@Test
-	void testUpdateEvent_NameTooLong_badCase() {
+	void testUpdateEvent_AtMost_badCase() {
 		int eventID = 1;
 		Assertions.assertThrows(StudyUpException.class, () -> {
-			eventServiceImpl.updateEventName(eventID, "Too longToo longToo longToo longToo longToo longToo long");
+			eventServiceImpl.updateEventName(eventID, "toolongtoolongtoolongtoolongtoolongtoolongtoolongtoolongtoolongtoolongtoolong");
 		  });
+	}
+	
+	@Test
+	void testUpdateEventName_MaxCase() throws StudyUpException {
+		int eventID = 1;
+		eventServiceImpl.updateEventName(eventID, "12345678912345678912");
+		assertEquals("12345678912345678912", DataStorage.eventData.get(eventID).getName());
 	}
 	
 	@Test
 	void testUpdateEvent_WrongEventID_badCase() {
-		int eventID = 3;
+		int eventID = 40;
 		Assertions.assertThrows(StudyUpException.class, () -> {
-			eventServiceImpl.updateEventName(eventID, "Renamed Event 3");
+			eventServiceImpl.updateEventName(eventID, "Renamed Event 40");
 		  });
-	}
-	
-	@Test
-	void testUpdateMethod_event_null_badcases() {
-		Event event = null;
-			Assertions.assertThrows(StudyUpException.class, () -> { 
-				eventServiceImpl.updateEvent(event);
-			}); 
 	}
 	
 	@Test
 	void testgetActiveEvents_GoodCase() throws StudyUpException {
-		assertEquals(eventServiceImpl.getActiveEvents().size(), 1);
+		assertEquals(eventServiceImpl.getActiveEvents().size(), 2);
 	}
 	
 	@Test
-	void testgetActiveEvents_EventInFuture_BadCase() {
+	void testgetPastEvents_GoodCase() throws StudyUpException {
+		assertEquals(eventServiceImpl.getPastEvents().size(), 2);	
+	}
+	
+	@Test
+	void testaddStudentToEvent_GoodCase() throws StudyUpException {
+		int eventId = 1;
+		Student testStudent = new Student();
+		eventServiceImpl.addStudentToEvent(testStudent, eventId);
+		assertEquals(DataStorage.eventData.get(eventId).getStudents().size(), 2); 
+	}
+	
+	@Test
+	void testaddStudentToEvent_BadCase() throws StudyUpException {
+		int eventId = 1;
+		Student testStudent = new Student();
+		Student testStudent2 = new Student();
+		eventServiceImpl.addStudentToEvent(testStudent, eventId);
+		eventServiceImpl.addStudentToEvent(testStudent2, eventId);
+		assertEquals(DataStorage.eventData.get(eventId).getStudents().size(), 2); 
+	}
+	
+	@Test
+	void testaddStudentToEvent_NullEvent() {
+		int eventId = 100;
+		Student testStudent = new Student();
 		Assertions.assertThrows(StudyUpException.class, () -> {
-			eventServiceImpl.getActiveEvents();
-		  });
+			eventServiceImpl.addStudentToEvent(testStudent, eventId);
+		});	
 	}
 	
 	@Test
-	void testBadCase() {
-		assertEquals(DataStorage.eventData.size(),1);
+	void testDeleteEvents_GoodCase() throws StudyUpException {
+		int eventId = 1;
+		eventServiceImpl.deleteEvent(eventId);
+		assertFalse(DataStorage.eventData.containsKey(eventId));
 	}
 }
