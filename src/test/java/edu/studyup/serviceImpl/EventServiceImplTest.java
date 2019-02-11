@@ -129,8 +129,20 @@ class EventServiceImplTest {
 	}
 	
 	@Test
+	void testgetActiveEvents_Contains() throws StudyUpException {
+		int eventID = 2;
+		assertTrue(eventServiceImpl.getActiveEvents().contains(DataStorage.eventData.get(eventID)));
+	}
+	
+	@Test
 	void testgetPastEvents_GoodCase() throws StudyUpException {
 		assertEquals(eventServiceImpl.getPastEvents().size(), 2);	
+	}
+	
+	@Test
+	void testgetPastEvents_Contains() throws StudyUpException {
+		int eventID = 3;
+		assertTrue(eventServiceImpl.getPastEvents().contains(DataStorage.eventData.get(eventID)));
 	}
 	
 	@Test
