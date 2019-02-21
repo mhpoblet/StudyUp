@@ -1,8 +1,11 @@
 package edu.studyup.map;
 
 import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -10,6 +13,7 @@ import java.net.URLEncoder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 
 import edu.studyup.entity.Location;
 
@@ -37,13 +41,14 @@ public class Lookup {
 		return new Location(lat, lon, bounds);
 	}
 
-	private static JSONArray queryURL(String query) {
+	private static JSONArray queryURL(OutputStream query) {
 		JSONArray results = new JSONArray();
 		try {
-			String urlString = "https://nominatim.openstreetmap.org/search?q=" + URLEncoder.encode(query, "UTF-8")
+			String urlString = "https://nominatim.openstreetmap.org/search?q=" + new OutputStreamWriter(query, "UTF-8")
 					+ "&format=json";
+
 			URL url = new URL(urlString);
-			try (BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()))) {
+			try (BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
 				StringBuilder sb = new StringBuilder();
 				int cp;
 				while ((cp = in.read()) != -1) {

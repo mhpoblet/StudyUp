@@ -46,7 +46,9 @@ public class Event {
 	}
 
 	public Date getDate() {
-		return date;
+		Date dateCopy;
+		dateCopy = date;
+		return dateCopy;
 	}
 
 	public void setDate(Date date) {
