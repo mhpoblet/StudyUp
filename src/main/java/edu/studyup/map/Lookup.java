@@ -9,6 +9,8 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -16,7 +18,7 @@ import org.json.JSONObject;
 import edu.studyup.entity.Location;
 
 public class Lookup {
-	public static Location lookupPlace(OutputStream query) {
+	public static Location lookupPlace(String query) {
 		JSONArray results = queryURL(query);
 		if (results.isEmpty())
 			return null;
