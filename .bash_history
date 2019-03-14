@@ -316,3 +316,86 @@ docker compose-i[
 docker compose-up
 ls
 docker-compose up
+ls
+cd docker
+docker ps
+docker exec -t 9e8 bash
+docker exec -it 9e8 bash
+docker exec 9e8 hotswap.sh
+docker exec 9e8 root/hotswap.sh
+docker exec 9e8 root/hotswap.sh test
+docker exec -it 9e8 bash
+docker exec 9e8 root/hotswap.sh testing
+docker exec -it 9e8 bash
+docker exec 9e8 root/hotswap.sh 34.73.56.224
+docker exec -it 9e8 bash
+docker exec -it 9e8 bash
+ls
+cd nginx-REDIS/
+ls
+vim hotswap.sh
+cd ..
+docker exec 9e8 root/hotswap.sh 34.73.56.224
+docker exec 9e8 root/hotswap.sh redis
+docker exec 9e8 root/hotswap.sh 34.73.56.224
+docker exec 9e8 root/hotswap.sh redis
+cd ..
+ls
+git add .
+git init 
+git add .
+cd ..
+ls
+cd mhpoblete
+git branch
+ls
+cd docker
+ls
+cd nginx-REDIS/
+ls
+rm nginxCopy.conf
+git status
+ls
+cd ..
+cd ..
+ls
+rm -r StudyUp/
+ls
+git status
+git add .
+git commit -m "finished hw"
+git config --global user.email "mhpoblete@ucdavis.edu" 
+git config --global user.name "mhpoblet"
+git commit -m "finished hw"
+git remote
+git push origin docker-branch
+ls
+cd docker/nginx-REDIS/
+ls
+vim hotswap.sh
+cd ..
+docker ps
+docker exec -it 9e8 bash
+docker exec 9e8 root/hotswap.sh redis
+docker exec 9e8 root/hotswap.sh 34.73.56.224
+cd nginx-REDIS/
+ls
+vim hotswap.sh
+cd ..
+git add .
+git commit -m "fixed syntax error"
+git push origin ecs161
+git push origin docker-branch
+docker exec 9e8 bash hotswap.sh redis
+cd docker
+ls
+docker-compose up
+cd docker
+ls
+docker-compose up
+cd docker
+ls
+docker ps
+docker exec -it fe5 bash
+ls
+docker exec -it 9e8 bash

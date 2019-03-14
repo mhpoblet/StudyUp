@@ -12,9 +12,13 @@
 ~H
 # Command Line History (newest to oldest):
 :wq
-|2,0,1552492910,,"wq"
+|2,0,1552523007,,"wq"
+:set number
+|2,0,1552520099,,"set number"
+:setnumber
+|2,0,1552520094,,"setnumber"
 :q
-|2,0,1552419345,,"q"
+|2,0,1552520068,,"q"
 :w
 |2,0,1552419122,,"w"
 :q!
@@ -41,288 +45,303 @@
 	exec "$@"
 |3,0,0,1,1,0,1552419173,"exec \"$@\""
 ""1	LINE	0
-	echo "done"
-|3,1,1,1,1,0,1552492908,"echo \"done\""
+	fi
+|3,1,1,1,1,0,1552522998,"fi"
 "2	LINE	0
-	RUN chmod +x /root/hotswap.sh
-|3,0,2,1,1,0,1552419520,"RUN chmod +x /root/hotswap.sh"
+		exec /usr/sbin/nginx -s reload
+|3,0,2,1,1,0,1552522997,"	exec /usr/sbin/nginx -s reload"
 "3	LINE	0
-	COPY hotswap.sh /etc/nginx/
-|3,0,3,1,1,0,1552419518,"COPY hotswap.sh /etc/nginx/"
+	else
+|3,0,3,1,1,0,1552522997,"else"
 "4	LINE	0
-	exec "$@"
-|3,0,4,1,1,0,1552419257,"exec \"$@\""
+		echo "Warning"
+|3,0,4,1,1,0,1552522996,"	echo \"Warning\""
 "5	LINE	0
-	exec /usr/sbin/nginx -s reload
-|3,0,5,1,1,0,1552419242,"exec /usr/sbin/nginx -s reload"
+	then
+|3,0,5,1,1,0,1552522996,"then"
 "6	LINE	0
-	#/bin/bash
-|3,0,6,1,1,0,1552419160,"#/bin/bash"
+	if  [ $OLDARG eq $1 ]
+|3,0,6,1,1,0,1552522996,"if  [ $OLDARG eq $1 ]"
 "7	LINE	0
-	read PARAM
-|3,0,7,1,1,0,1552419158,"read PARAM"
+	
+|3,0,7,1,1,0,1552522995,""
 "8	LINE	0
-	sed -i "s/\($TARGET *:*\).*/\1$PARAM/" nginxCopy.conf
-|3,0,8,1,1,0,1552419157,"sed -i \"s/\\($TARGET *:*\\).*/\\1$PARAM/\" nginxCopy.conf"
+	OLDARG=$1
+|3,0,8,1,1,0,1552522995,"OLDARG=$1"
 "9	LINE	0
-	123
-|3,0,9,1,1,0,1552418965,"123"
+	
+|3,0,9,1,1,0,1552522995,""
 "-	CHAR	0
 	}
 |3,0,36,0,1,0,1551979552,"}"
 
 # File marks:
-'0  7  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,48,7,0,1552492910,"~/docker/nginx-REDIS/hotswap.sh"
-'1  18  0  ~/docker/nginx-REDIS/Dockerfile
-|4,49,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
-'2  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,50,14,0,1552419345,"~/docker/nginx-REDIS/nginxCopy.conf"
-'3  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,51,14,0,1552419325,"~/docker/nginx-REDIS/nginxCopy.conf"
-'4  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,52,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
-'5  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,53,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
-'6  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,54,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
-'7  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,55,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
-'8  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,56,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
-'9  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,57,14,2,1552418984,"~/docker/nginx-REDIS/nginx.conf"
+'0  11  1  ~/docker/nginx-REDIS/hotswap.sh
+|4,48,11,1,1552523007,"~/docker/nginx-REDIS/hotswap.sh"
+'1  1  19  ~/docker/nginx-REDIS/hotswap.sh
+|4,49,1,19,1552520193,"~/docker/nginx-REDIS/hotswap.sh"
+'2  9  19  ~/docker/nginx-REDIS/hotswap.sh
+|4,50,9,19,1552520193,"~/docker/nginx-REDIS/hotswap.sh"
+'3  1  0  ~/docker/hotswap.sh
+|4,51,1,0,1552520068,"~/docker/hotswap.sh"
+'4  1  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,52,1,8,1552519961,"~/docker/nginx-REDIS/hotswap.sh"
+'5  1  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,53,1,8,1552519961,"~/docker/nginx-REDIS/hotswap.sh"
+'6  7  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,54,7,8,1552519961,"~/docker/nginx-REDIS/hotswap.sh"
+'7  7  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,55,7,8,1552519961,"~/docker/nginx-REDIS/hotswap.sh"
+'8  1  5  ~/docker/nginx-REDIS/hotswap.sh
+|4,56,1,5,1552494064,"~/docker/nginx-REDIS/hotswap.sh"
+'9  1  5  ~/docker/nginx-REDIS/hotswap.sh
+|4,57,1,5,1552494064,"~/docker/nginx-REDIS/hotswap.sh"
 
 # Jumplist (newest first):
+-'  11  1  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,11,1,1552523007,"~/docker/nginx-REDIS/hotswap.sh"
+-'  1  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,1,0,1552522987,"~/docker/nginx-REDIS/hotswap.sh"
+-'  9  19  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,9,19,1552520193,"~/docker/nginx-REDIS/hotswap.sh"
+-'  7  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,0,1552520089,"~/docker/nginx-REDIS/hotswap.sh"
+-'  1  0  ~/docker/hotswap.sh
+|4,39,1,0,1552520068,"~/docker/hotswap.sh"
+-'  1  0  ~/docker/hotswap.sh
+|4,39,1,0,1552520068,"~/docker/hotswap.sh"
+-'  1  0  ~/docker/hotswap.sh
+|4,39,1,0,1552520068,"~/docker/hotswap.sh"
+-'  1  0  ~/docker/hotswap.sh
+|4,39,1,0,1552520068,"~/docker/hotswap.sh"
+-'  7  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,8,1552519961,"~/docker/nginx-REDIS/hotswap.sh"
+-'  7  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,8,1552519961,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,0,1552519340,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,0,1552519340,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,0,1552519340,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  5  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,5,1552494064,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  5  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,5,1552494064,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,8,1552493919,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  8  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,8,1552493919,"~/docker/nginx-REDIS/hotswap.sh"
+-'  14  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,14,0,1552493616,"~/docker/nginx-REDIS/hotswap.sh"
+-'  14  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,14,0,1552493616,"~/docker/nginx-REDIS/hotswap.sh"
+-'  7  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,0,1552493616,"~/docker/nginx-REDIS/hotswap.sh"
+-'  7  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,0,1552493616,"~/docker/nginx-REDIS/hotswap.sh"
+-'  14  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,14,0,1552493616,"~/docker/nginx-REDIS/hotswap.sh"
+-'  7  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,0,1552493616,"~/docker/nginx-REDIS/hotswap.sh"
+-'  7  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,0,1552493616,"~/docker/nginx-REDIS/hotswap.sh"
 -'  7  0  ~/docker/nginx-REDIS/hotswap.sh
 |4,39,7,0,1552492910,"~/docker/nginx-REDIS/hotswap.sh"
+-'  7  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,7,0,1552492910,"~/docker/nginx-REDIS/hotswap.sh"
+-'  5  0  ~/docker/nginx-REDIS/hotswap.sh
+|4,39,5,0,1552492855,"~/docker/nginx-REDIS/hotswap.sh"
 -'  5  0  ~/docker/nginx-REDIS/hotswap.sh
 |4,39,5,0,1552492855,"~/docker/nginx-REDIS/hotswap.sh"
 -'  18  0  ~/docker/nginx-REDIS/Dockerfile
 |4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
 -'  18  0  ~/docker/nginx-REDIS/Dockerfile
 |4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
--'  13  0  ~/docker/nginx-REDIS/Dockerfile
-|4,39,13,0,1552419493,"~/docker/nginx-REDIS/Dockerfile"
--'  13  0  ~/docker/nginx-REDIS/Dockerfile
-|4,39,13,0,1552419493,"~/docker/nginx-REDIS/Dockerfile"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419345,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419345,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419345,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419345,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419325,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419325,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419325,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,0,1552419325,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  5  35  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,5,35,1552419282,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  4  0  ~/docker/nginx-REDIS/hotswap.sh
-|4,39,4,0,1552419110,"~/docker/nginx-REDIS/hotswap.sh"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  11  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,14,11,1552419105,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  1  0  ~/docker/nginx-REDIS/nginxCopy.conf
-|4,39,1,0,1552419098,"~/docker/nginx-REDIS/nginxCopy.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
--'  14  2  ~/docker/nginx-REDIS/nginx.conf
-|4,39,14,2,1552419033,"~/docker/nginx-REDIS/nginx.conf"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
+-'  18  0  ~/docker/nginx-REDIS/Dockerfile
+|4,39,18,0,1552419563,"~/docker/nginx-REDIS/Dockerfile"
 
 # History of marks within files (newest to oldest):
 
 > ~/docker/nginx-REDIS/hotswap.sh
-	*	1552492909	0
-	"	7	0
-	.	8	0
+	*	1552523006	0
+	"	11	1
+	^	11	2
+	.	11	1
 	+	1	10
 	+	1	12
-	+	4	5
-	+	4	9
-	+	4	0
-	+	4	11
-	+	4	8
-	+	4	2
-	+	4	10
-	+	4	1
-	+	4	0
-	+	1	6
-	+	8	8
-	+	2	0
+	+	1	5
+	+	1	9
+	+	1	0
+	+	1	11
+	+	1	8
+	+	1	2
 	+	1	10
-	+	5	52
-	+	7	0
-	+	8	0
-	+	8	10
-	+	5	67
-	+	6	29
-	+	8	0
+	+	1	1
+	+	1	0
+	+	1	6
+	+	1	8
+	+	1	0
+	+	1	10
+	+	1	52
+	+	1	0
+	+	1	10
+	+	1	67
+	+	1	29
+	+	1	0
+	+	1	6
+	+	1	0
+	+	1	14
+	+	1	3
+	+	1	0
+	+	1	1
+	+	1	0
+	+	1	8
+	+	1	19
+	+	1	11
+	+	11	1
+
+> ~/docker/hotswap.sh
+	*	1552520067	0
+	"	1	0
 
 > ~/docker/nginx-REDIS/Dockerfile
 	*	1552419562	0
